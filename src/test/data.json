@@ -1,5 +1,10 @@
 {
-  "name": "Béla",
+  "fName": "Béla",
   "email": "nandan@gmail.com",
-  "phone": "06320442411"
+  "phone": "06320442411",
+  "lName": "Baala",
+  "passWord": "belavagyok",
+  "Subscribe": true,
+  "conditionAgree": true,
+  "continueClick": false
 }

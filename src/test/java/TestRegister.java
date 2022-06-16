@@ -11,14 +11,14 @@ import java.util.Set;
 
 public class TestRegister extends TestBase{
 
-    String firstName = "Roland";
-    String lastName = "Crisan";
-    String email = "valami@valami.hu";
-    String phone = "06304573264";
-    String passWord = "belavagyok";
-    Boolean Subscribe = true;
-    Boolean conditionAgree = true;
-    Boolean continueClick = false;
+//    String firstName = "Roland";
+//    String lastName = "Crisan";
+//    String email = "valami@valami.hu";
+//    String phone = "06304573264";
+//    String passWord = "belavagyok";
+//    Boolean Subscribe = true;
+//    Boolean conditionAgree = true;
+//    Boolean continueClick = false;
 
 
 
@@ -26,9 +26,8 @@ public class TestRegister extends TestBase{
 
 
     @Test
-    public void testingRegistration() throws InterruptedException {
+    public void testingRegistration(){
         RegisterPage registerPage = (RegisterPage) PageFactory.Create("RegisterPage", driver);
-        //LandingPage landingPage = (LandingPage) PageFactory.Create("LandingPage", driver);
         driver.get(registerPage.registrationURL);
         registerPage.fieldFiller("FirstName", firstName,null);
         registerPage.fieldFiller("LastName", lastName,null);
