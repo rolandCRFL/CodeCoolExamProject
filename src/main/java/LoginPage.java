@@ -5,6 +5,8 @@ public class LoginPage extends PageBase {
 
     final By emailAddressField = By.id("input-email");
     final By passwordField = By.id("input-password");
+    final By loginButton = By.xpath("//button[@data-loading-text=\"<span>Login</span>\"]");
+
 
 
 

@@ -1,6 +1,4 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.json.JSONObject;
-import org.junit.Test;
 
 //import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,40 +7,103 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase  {
 
      public WebDriver driver;
 
-    String jsonDataAsString;
+     public ArrayList<String> guitarCategoryList;
+
+     public ArrayList<String> guitarStringList;
+
+     public
+    String firstName;
 
     {
         try {
-            jsonDataAsString = new String(Files.readAllBytes(Paths.get("src/test/data.json")));
-
+            firstName = jSonStringCollector("fName");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
-    JSONObject jsonData = new JSONObject(jsonDataAsString);
-    String firstName = jSonStringCollector("fName");
-    String lastName = jSonStringCollector("lName");
-    String email = jSonStringCollector("email");
-    String phone = jSonStringCollector("phone");
-    String passWord = jSonStringCollector("passWord");
-    Boolean Subscribe = jSonBooleanCollector("Subscribe");
-    Boolean conditionAgree = jSonBooleanCollector("conditionAgree");
-    Boolean continueClick = jSonBooleanCollector("continueClick");
 
+    String lastName;
+
+    {
+        try {
+            lastName = jSonStringCollector("lName");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    String email;
+
+    {
+        try {
+            email = jSonStringCollector("email");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    String phone;
+
+    {
+        try {
+            phone = jSonStringCollector("phone");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    String passWord;
+
+    {
+        try {
+            passWord = jSonStringCollector("passWord");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    Boolean Subscribe;
+
+    {
+        try {
+            Subscribe = jSonBooleanCollector("Subscribe");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    Boolean conditionAgree;
+
+    {
+        try {
+            conditionAgree = jSonBooleanCollector("conditionAgree");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    Boolean continueClick;
+
+    {
+        try {
+            continueClick = jSonBooleanCollector("continueClick");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 
     String url = "https://www.hangszerdiszkont.hu/";
 
     public TestBase()  {
+        this.guitarStringList = new ArrayList<>();
     }
 
 
@@ -54,23 +115,27 @@ public class TestBase  {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-notifications");
         options.addArguments("--disable-extensions");
-        options.addArguments("--headless");
+        //options.addArguments("--headless");
         options.addArguments("−−incognito");
         options.addArguments("--window-size=1920,1080");
-        options.addArguments("start-maximized");
+        //options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         driver.get("https://www.hangszerdiszkont.hu/");
 
 
+
     }
 
-    public String jSonStringCollector(String data){
-        return jsonData.getString(data);
+
+    public String jSonStringCollector(String data) throws IOException {
+        Tools tools = (Tools) PageFactory.Create("Tools",driver);
+        return tools.readJsonObject(PageBase.dataFilePath).getString(data);
     }
-    public Boolean jSonBooleanCollector(String data){
-        return jsonData.getBoolean(data);
+    public Boolean jSonBooleanCollector(String data) throws IOException {
+        Tools tools = (Tools) PageFactory.Create("Tools",driver);
+        return tools.readJsonObject(PageBase.dataFilePath).getBoolean(data);
 
     }
 

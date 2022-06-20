@@ -30,7 +30,7 @@ public class RegisterPage extends PageBase {
         WebElement click = driver.findElement(button);
         click.click();
     }
-
+        // Ez az első próbálkozásom volt, de hamar beláttam hogy nem túl szép :D
     public void fieldFiller(String switchPosition, String fillerData, Boolean sWitcher){
         switch (switchPosition){
             case "FirstName":

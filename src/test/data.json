@@ -1,10 +1,11 @@
 {
-  "fName": "Béla",
-  "email": "nandan@gmail.com",
-  "phone": "06320442411",
-  "lName": "Baala",
-  "passWord": "belavagyok",
-  "Subscribe": true,
-  "conditionAgree": true,
-  "continueClick": false
-}
+    "fName": "Béla",
+    "email": "nandan@gmail.com",
+    "phone": "06320442411",
+    "lName": "Baala",
+    "passWord": "belavagyok",
+    "Subscribe": true,
+    "conditionAgree": true,
+    "continueClick": false
+
+    }

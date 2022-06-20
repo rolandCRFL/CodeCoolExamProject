@@ -12,12 +12,10 @@ public class PageFactory {
                 return new LoginPage(driver);
             case "Tools":
                 return new Tools(driver);
+            case "GSPage":
+                return new GoodsPage(driver);
             default:
                 return null;
         }
     }
-
-
-
-
 }

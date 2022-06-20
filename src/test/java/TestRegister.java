@@ -22,21 +22,29 @@ public class TestRegister extends TestBase{
 
 
 
-
-
-
     @Test
     public void testingRegistration(){
         RegisterPage registerPage = (RegisterPage) PageFactory.Create("RegisterPage", driver);
+        Tools tools = (Tools) PageFactory.Create("Tools", driver);
         driver.get(registerPage.registrationURL);
-        registerPage.fieldFiller("FirstName", firstName,null);
-        registerPage.fieldFiller("LastName", lastName,null);
-        registerPage.fieldFiller("Email", email,null);
-        registerPage.fieldFiller("Phone", phone, null);
-        registerPage.fieldFiller("Password", passWord, null);
-        registerPage.fieldFiller("Subscribe", null, Subscribe );
-        registerPage.fieldFiller("Agree",null, conditionAgree);
-        registerPage.fieldFiller("ContinueClick", null,continueClick);
+//        registerPage.fieldFiller("FirstName", firstName,null);
+//        registerPage.fieldFiller("LastName", lastName,null);
+//        registerPage.fieldFiller("Email", email,null);
+//        registerPage.fieldFiller("Phone", phone, null);
+//        registerPage.fieldFiller("Password", passWord, null);
+//        registerPage.fieldFiller("Subscribe", null, Subscribe );
+//        registerPage.fieldFiller("Agree",null, conditionAgree);
+//        registerPage.fieldFiller("ContinueClick", null,continueClick);
+        tools.stringFieldFiller(registerPage.firstNameField,firstName);
+        tools.stringFieldFiller(registerPage.lastNameField,lastName);
+        tools.stringFieldFiller(registerPage.telephoneField,phone);
+        tools.stringFieldFiller(registerPage.emailField,email);
+        tools.stringFieldFiller(registerPage.passwordField,passWord);
+        tools.stringFieldFiller(registerPage.passwordConfirmField,passWord);
+        tools.booleanFieldFiller(registerPage.subscribeYes,registerPage.subscribeNo,Subscribe);
+        tools.booleanFieldFiller(registerPage.agreeCheckBox, null, conditionAgree);
+        tools.booleanFieldFiller(registerPage.continueButton,null,continueClick);
+
 
 
     }
