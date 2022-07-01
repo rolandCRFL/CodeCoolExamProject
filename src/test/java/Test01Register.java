@@ -1,24 +1,19 @@
 import io.qameta.allure.*;
+import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
-import java.util.Iterator;
-import java.util.Set;
 
-public class TestRegister extends TestBase {
+public class Test01Register extends TestBase {
 
 
     @RepeatedTest(1)
     @Epic("Hangszerdiszkont.hu")
+    @Feature("Registration")
     @Story("Registration tests")
     @Description("To check if the page is available")
     @DisplayName("TC01 - Site Availability")
@@ -36,6 +31,8 @@ public class TestRegister extends TestBase {
 
         //Check that the logo is displayed on the page
         Assertions.assertEquals(true, pageLogo.isDisplayed());
+
+
     }
 
 
