@@ -8,12 +8,13 @@ import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 
-public class TestLogin extends Test00Base {
-
+public class Test02Login extends Test00Base {
 
     @RepeatedTest(1)
     @Epic("Hangszerdiszkont.hu")
-    @Story("Login Tests")
+    @Feature("Login")
+    @Feature("USER 1")
+    @Story("Login valid")
     @Description("Login with a registered account (USER 1)")
     @DisplayName("TC07")
     @Severity(SeverityLevel.CRITICAL)

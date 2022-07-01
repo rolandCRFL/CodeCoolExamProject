@@ -72,7 +72,9 @@ public class Test01Register extends Test00Base {
         //Complete the registration process based on the criteria specified in the data.json file.
         tools.booleanFieldFiller(registerPage.subscribeYes, registerPage.subscribeNo, Subscribe);
         tools.booleanFieldFiller(registerPage.agreeCheckBox, null, conditionAgree);
+        takeScreenShot();
         tools.booleanFieldFiller(registerPage.continueButton, null, continueClick);
+        takeScreenShot();
 
             //ASSERT
         WebElement loginCheckedText = driver.findElement(By.linkText("Logout"));
@@ -117,7 +119,10 @@ public class Test01Register extends Test00Base {
         //Complete the registration process based on the criteria specified in the data.json file.
         tools.booleanFieldFiller(registerPage.subscribeYes, registerPage.subscribeNo, Subscribe);
         tools.booleanFieldFiller(registerPage.agreeCheckBox, null, conditionAgree);
+        takeScreenShot();
         tools.booleanFieldFiller(registerPage.continueButton, null, continueClick);
+        takeScreenShot();
+
 
             //ASSERT
 
@@ -163,7 +168,9 @@ public class Test01Register extends Test00Base {
         //Complete the registration process based on the criteria specified in the data.json file.
         tools.booleanFieldFiller(registerPage.subscribeYes, registerPage.subscribeNo, Subscribe);
         tools.booleanFieldFiller(registerPage.agreeCheckBox, null, conditionAgree);
+        takeScreenShot();
         tools.booleanFieldFiller(registerPage.continueButton, null, continueClick);
+        takeScreenShot();
 
             //ASSERT
 
@@ -209,7 +216,9 @@ public class Test01Register extends Test00Base {
         //Complete the registration process based on the criteria specified in the data.json file.
         tools.booleanFieldFiller(registerPage.subscribeYes, registerPage.subscribeNo, Subscribe);
         tools.booleanFieldFiller(registerPage.agreeCheckBox, null, conditionAgree);
+        takeScreenShot();
         tools.booleanFieldFiller(registerPage.continueButton, null, continueClick);
+        takeScreenShot();
 
             //ASSERT
 
@@ -257,7 +266,9 @@ public class Test01Register extends Test00Base {
         //Complete the registration process based on the criteria specified in the data.json file.
         tools.booleanFieldFiller(registerPage.subscribeYes, registerPage.subscribeNo, Subscribe);
         tools.booleanFieldFiller(registerPage.agreeCheckBox, null, conditionAgree);
+        takeScreenShot();
         tools.booleanFieldFiller(registerPage.continueButton, null, continueClick);
+        takeScreenShot();
 
             //ASSERT
 

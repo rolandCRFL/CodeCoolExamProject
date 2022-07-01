@@ -93,9 +93,4 @@ public class Test00Base {
         driver.manage().deleteAllCookies();
         driver.quit();
     }
-
-
-
-
-
 }
