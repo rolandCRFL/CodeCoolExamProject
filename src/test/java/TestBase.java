@@ -1,7 +1,10 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 //import org.junit.jupiter.api.BeforeEach;
+import io.qameta.allure.Attachment;
 import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -89,6 +92,11 @@ public class TestBase  {
         Tools tools = (Tools) PageFactory.Create("Tools",driver);
         return tools.readJsonObject(PageBase.dataFilePath).getBoolean(data);
 
+    }
+
+    @Attachment
+    public byte[] saveFailureScreenShot(WebDriver driver){
+        return((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
     }
 
 
