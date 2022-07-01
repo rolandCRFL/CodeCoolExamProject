@@ -14,12 +14,12 @@ public class Test01Register extends TestBase {
     @RepeatedTest(1)
     @Epic("Hangszerdiszkont.hu")
     @Feature("Registration")
-    @Story("Registration tests")
+    @Story("Availability tests")
     @Description("To check if the page is available")
     @DisplayName("TC01 - Site Availability")
     @Severity(SeverityLevel.CRITICAL)
+    @Attachment
     public void testSiteAvailability() {
-
             //TEST
 
         //Navigate to the site
@@ -31,15 +31,14 @@ public class Test01Register extends TestBase {
 
         //Check that the logo is displayed on the page
         Assertions.assertEquals(false, pageLogo.isDisplayed());
-
+        ///????
         saveFailureScreenShot(driver);
-
-
     }
 
 
     @RepeatedTest(1)
     @Epic("Hangszerdiszkont.hu")
+    @Feature("Registration")
     @Story("Registration tests")
     @Description("Registration with correctly filled data")
     @DisplayName("TC02")
