@@ -1,3 +1,4 @@
+import org.apache.commons.lang3.RandomStringUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.openqa.selenium.By;
@@ -136,7 +137,6 @@ public class Tools extends PageBase {
         for (int i = 0; i < elements.length; i++) {
             driver.findElement(elements[i]).sendKeys(Keys.LEFT_CONTROL,"A");
             driver.findElement(elements[i]).sendKeys(readJsonObject(PageBase.dataFilePath).getString(data[i]+accountSelector));
-
         }
     }
     //Create a for loop that will allow you to add the page number to the URL you just stored, one by one, and extract the data you want to an ArrayList.
@@ -150,4 +150,10 @@ public class Tools extends PageBase {
                 driver.get(newPageURL);}
         }
     }
+
+    public String randomMail(){
+        return RandomStringUtils.randomAlphabetic(7) + "@gmail.com";
+    }
+
+
 }

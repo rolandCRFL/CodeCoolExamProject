@@ -12,11 +12,11 @@ public class Test01Register extends Test00Base {
     @RepeatedTest(1)
     @Epic("Hangszerdiszkont.hu")
     @Feature("Registration")
+    @Feature("Valid tests")
     @Story("Availability tests")
     @Description("To check if the page is available")
     @DisplayName("TC01 - Site Availability")
     @Severity(SeverityLevel.CRITICAL)
-    @Attachment
     public void testSiteAvailability() {
             //TEST
 
@@ -24,24 +24,26 @@ public class Test01Register extends Test00Base {
         driver.get(siteUrl);
         //The site logo will be the basis for verification
         WebElement pageLogo = driver.findElement(By.xpath("//*[@id=\"logo\"]"));
-        takeScreenShot();
+        takeScreenShot("Available check");
 
             //ASSERT
 
         //Check that the logo is displayed on the page
         Assertions.assertEquals(true, pageLogo.isDisplayed());
 
-
     }
 
     @RepeatedTest(1)
     @Epic("Hangszerdiszkont.hu")
     @Feature("Registration")
+    @Feature("USER 1")
+    @Feature("Valid tests")
+    @Feature("BUGS")
     @Story("Registration valid")
-    @Description("Registration with correctly filled data")
+    @Description("Registration with correctly filled data (USER 1) - BUG #1")
     @DisplayName("TC02")
     @Severity(SeverityLevel.CRITICAL)
-    public void testRegCorrectData() throws IOException {
+    public void testRegCorrectData() throws IOException, InterruptedException {
             //PAGEFACTORY
         RegisterPage registerPage = (RegisterPage) PageFactory.Create("RegisterPage", driver);
         Tools tools = (Tools) PageFactory.Create("Tools", driver);
@@ -54,7 +56,6 @@ public class Test01Register extends Test00Base {
         By[] elements = {
                 registerPage.firstNameField,
                 registerPage.lastNameField,
-                registerPage.emailField,
                 registerPage.telephoneField,
                 registerPage.passwordField,
                 registerPage.passwordConfirmField};
@@ -62,33 +63,37 @@ public class Test01Register extends Test00Base {
         String[] dataSelector = {
                 "fName",
                 "lName",
-                "email",
                 "phone",
                 "passWord",
                 "passWord"};
         //Using a method we have written to fill in the data
         //USER 1 !
         tools.dataFiller(elements, dataSelector, "1");
+        //You will need a randomly generated email address to run the test in sequence.
+        driver.findElement(registerPage.emailField).sendKeys(tools.randomMail());
         //Complete the registration process based on the criteria specified in the data.json file.
         tools.booleanFieldFiller(registerPage.subscribeYes, registerPage.subscribeNo, Subscribe);
         tools.booleanFieldFiller(registerPage.agreeCheckBox, null, conditionAgree);
-        takeScreenShot();
+        takeScreenShot("Data filled, BEFORE");
         tools.booleanFieldFiller(registerPage.continueButton, null, continueClick);
-        takeScreenShot();
 
             //ASSERT
+        Thread.sleep(1500);
         WebElement loginCheckedText = driver.findElement(By.linkText("Logout"));
+        takeScreenShot("AFTER");
         Assertions.assertEquals(true, loginCheckedText.isDisplayed());
     }
 
     @RepeatedTest(1)
     @Epic("Hangszerdiszkont.hu")
     @Feature("Registration")
-    @Story("Registration invalid")
-    @Description("Registration with incorrect email data")
+    @Feature("USER 2")
+    @Feature("Valid tests")
+    @Story("Registration valid")
+    @Description("Registration with incorrect email data (USER 2)")
     @DisplayName("TC03")
     @Severity(SeverityLevel.CRITICAL)
-    public void testRegBadEmail() throws IOException {
+    public void testRegBadEmail() throws IOException, InterruptedException {
             //PAGEFACTORY
         RegisterPage registerPage = (RegisterPage) PageFactory.Create("RegisterPage", driver);
         Tools tools = (Tools) PageFactory.Create("Tools", driver);
@@ -119,25 +124,26 @@ public class Test01Register extends Test00Base {
         //Complete the registration process based on the criteria specified in the data.json file.
         tools.booleanFieldFiller(registerPage.subscribeYes, registerPage.subscribeNo, Subscribe);
         tools.booleanFieldFiller(registerPage.agreeCheckBox, null, conditionAgree);
-        takeScreenShot();
+        takeScreenShot("Data filled, BEFORE");
         tools.booleanFieldFiller(registerPage.continueButton, null, continueClick);
-        takeScreenShot();
-
 
             //ASSERT
-
+        Thread.sleep(1500);
         WebElement emailCheckedText = driver.findElement(By.xpath("//*[ text() = \"E-Mail Address does not appear to be valid!\"]"));
+        takeScreenShot("AFTER");
         Assertions.assertEquals(true, emailCheckedText.isDisplayed());
     }
 
     @RepeatedTest(1)
     @Epic("Hangszerdiszkont.hu")
     @Feature("Registration")
-    @Story("Registration invalid")
-    @Description("Registration with missing data")
+    @Feature("USER 3")
+    @Feature("Valid tests")
+    @Story("Registration valid")
+    @Description("Registration with missing data (USER 3)")
     @DisplayName("TC04")
     @Severity(SeverityLevel.CRITICAL)
-    public void testRegMissingData() throws IOException {
+    public void testRegMissingData() throws IOException, InterruptedException {
             //PAGEFACTORY
         RegisterPage registerPage = (RegisterPage) PageFactory.Create("RegisterPage", driver);
         Tools tools = (Tools) PageFactory.Create("Tools", driver);
@@ -150,7 +156,6 @@ public class Test01Register extends Test00Base {
         By[] elements = {
                 registerPage.firstNameField,
                 registerPage.lastNameField,
-                registerPage.emailField,
                 registerPage.telephoneField,
                 registerPage.passwordField,
                 registerPage.passwordConfirmField};
@@ -158,31 +163,35 @@ public class Test01Register extends Test00Base {
         String[] dataSelector = {
                 "fName",
                 "lName",
-                "email",
                 "phone",
                 "passWord",
                 "passWord"};
         //Using a method we have written to fill in the data
         //USER 3 !
         tools.dataFiller(elements, dataSelector, "3");
+        //You will need a randomly generated email address to run the test in sequence.
+        driver.findElement(registerPage.emailField).sendKeys(tools.randomMail());
         //Complete the registration process based on the criteria specified in the data.json file.
         tools.booleanFieldFiller(registerPage.subscribeYes, registerPage.subscribeNo, Subscribe);
         tools.booleanFieldFiller(registerPage.agreeCheckBox, null, conditionAgree);
-        takeScreenShot();
+        takeScreenShot("Data filled, BEFORE");
         tools.booleanFieldFiller(registerPage.continueButton, null, continueClick);
-        takeScreenShot();
 
             //ASSERT
-
-        WebElement phoneCheckedText = driver.findElement(By.xpath("//*[ text() = \"Telephone must be between 3 and 32 characters!\"]"));
+        Thread.sleep(1500);
+        WebElement phoneCheckedText = driver.findElement(By.xpath("//*[text() = \"Telephone must be between 3 and 32 characters!\"]"));
+        takeScreenShot("AFTER");
         Assertions.assertEquals(true, phoneCheckedText.isDisplayed());
     }
 
     @RepeatedTest(1)
     @Epic("Hangszerdiszkont.hu")
     @Feature("Registration")
-    @Story("Registration valid")
-    @Description("Registration with too easy password")
+    @Feature("USER 4")
+    @Feature("Invalid tests")
+    @Feature("BUGS")
+    @Story("Registration invalid")
+    @Description("Registration with too easy password (USER 4) - BUG #2")
     @DisplayName("TC05")
     @Severity(SeverityLevel.NORMAL)
     public void testRegEasyPassword() throws IOException, InterruptedException {
@@ -198,7 +207,6 @@ public class Test01Register extends Test00Base {
         By[] elements = {
                 registerPage.firstNameField,
                 registerPage.lastNameField,
-                registerPage.emailField,
                 registerPage.telephoneField,
                 registerPage.passwordField,
                 registerPage.passwordConfirmField};
@@ -206,24 +214,25 @@ public class Test01Register extends Test00Base {
         String[] dataSelector = {
                 "fName",
                 "lName",
-                "email",
                 "phone",
                 "passWord",
                 "passWord"};
         //Using a method we have written to fill in the data
         //USER 4 !
         tools.dataFiller(elements, dataSelector, "4");
+        //You will need a randomly generated email address to run the test in sequence.
+        driver.findElement(registerPage.emailField).sendKeys(tools.randomMail());
         //Complete the registration process based on the criteria specified in the data.json file.
         tools.booleanFieldFiller(registerPage.subscribeYes, registerPage.subscribeNo, Subscribe);
         tools.booleanFieldFiller(registerPage.agreeCheckBox, null, conditionAgree);
-        takeScreenShot();
+        takeScreenShot("Data filled, BEFORE");
         tools.booleanFieldFiller(registerPage.continueButton, null, continueClick);
-        takeScreenShot();
 
             //ASSERT
 
         //Sleep is required due to the late response of the page.
-        Thread.sleep(5000);
+        Thread.sleep(1500);
+        takeScreenShot("AFTER");
         String expectedURL = "https://www.hangszerdiszkont.hu/index.php?route=account/register&popup=register";
         Assertions.assertEquals(expectedURL,driver.getCurrentUrl());
     }
@@ -231,8 +240,11 @@ public class Test01Register extends Test00Base {
     @RepeatedTest(1)
     @Epic("Hangszerdiszkont.hu")
     @Feature("Registration")
+    @Feature("USER 5")
+    @Feature("Invalid tests")
+    @Feature("BUGS")
     @Story("Registration invalid")
-    @Description("Registration with incorrect char types")
+    @Description("Registration with incorrect char types (USER 5) - BUG #3")
     @DisplayName("TC06")
     @Severity(SeverityLevel.MINOR)
     public void testRegIncorrectChar() throws IOException, InterruptedException {
@@ -248,7 +260,6 @@ public class Test01Register extends Test00Base {
         By[] elements = {
                 registerPage.firstNameField,
                 registerPage.lastNameField,
-                registerPage.emailField,
                 registerPage.telephoneField,
                 registerPage.passwordField,
                 registerPage.passwordConfirmField};
@@ -256,24 +267,25 @@ public class Test01Register extends Test00Base {
         String[] dataSelector = {
                 "fName",
                 "lName",
-                "email",
                 "phone",
                 "passWord",
                 "passWord"};
         //Using a method we have written to fill in the data
         //USER 5 !
         tools.dataFiller(elements, dataSelector, "5");
+        //You will need a randomly generated email address to run the test in sequence.
+        driver.findElement(registerPage.emailField).sendKeys(tools.randomMail());
         //Complete the registration process based on the criteria specified in the data.json file.
         tools.booleanFieldFiller(registerPage.subscribeYes, registerPage.subscribeNo, Subscribe);
         tools.booleanFieldFiller(registerPage.agreeCheckBox, null, conditionAgree);
-        takeScreenShot();
+        takeScreenShot("Data filled, BEFORE");
         tools.booleanFieldFiller(registerPage.continueButton, null, continueClick);
-        takeScreenShot();
 
             //ASSERT
 
         //The site is sometimes slow to respond, which is why all this sleep is necessary
-        Thread.sleep(5000);
+        Thread.sleep(1500);
+        takeScreenShot("AFTER");
         String expectedURL = "https://www.hangszerdiszkont.hu/index.php?route=account/register&popup=register";
         Assertions.assertEquals(expectedURL,driver.getCurrentUrl());
     }

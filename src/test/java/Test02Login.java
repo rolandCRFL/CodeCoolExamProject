@@ -13,13 +13,13 @@ public class Test02Login extends Test00Base {
     @RepeatedTest(1)
     @Epic("Hangszerdiszkont.hu")
     @Feature("Login")
+    //????
     @Feature("USER 1")
     @Story("Login valid")
     @Description("Login with a registered account (USER 1)")
     @DisplayName("TC07")
     @Severity(SeverityLevel.CRITICAL)
-    public void testingLoginRegistered() throws IOException {
-
+    public void testLoginRegistered() throws IOException {
             // PAGEFACTORY
         Tools tools = (Tools) PageFactory.Create("Tools", driver);
         LandingPage landingPage = (LandingPage) PageFactory.Create("LandingPage",driver);
@@ -29,31 +29,30 @@ public class Test02Login extends Test00Base {
 
         //Navigate to the login page
         tools.buttonClicker(landingPage.myAccountButton,false);
-
         //Collecting the web elements to be filled in an array, THE ORDER IS IMPORTANT!
         By[] elements = {
                 loginPage.emailAddressField,
                 loginPage.passwordField};
-
         //Collecting the data to be filled into an array. The order is important, it must be consistent with the order of the previously created web elements!
         String[] dataSelector = {
                 "email",
                 "passWord"};
-
         //Using a method we have written to fill in the data
         //USER 1 !
         String accountSelector = "1";
         tools.dataFiller(elements, dataSelector, accountSelector);
-
+        takeScreenShot("Data filled, BEFORE");
         //Click on Login button
         tools.buttonClicker(loginPage.loginButton,false);
+        takeScreenShot("AFTER Login");
 
             //ASSERT
 
         //Navigate to the account informations
         tools.buttonClicker(landingPage.myAccountButton,false);
+        takeScreenShot("My account");
         driver.findElement(loginPage.editAccountInformationButton).click();
-
+        takeScreenShot("Edit account page");
         //Get the email address from form and compare it with the login address
         String expectedEmail = tools.jSonStringCollector("email"+accountSelector);
         String actualEmail = driver.findElement(loginPage.emailAddressField).getAttribute("value");

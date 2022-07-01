@@ -61,7 +61,7 @@ public class Test00Base {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-notifications");
         options.addArguments("--disable-extensions");
-        options.addArguments("--headless");
+        //options.addArguments("--headless");
         options.addArguments("−−incognito");
         options.addArguments("--window-size=1920,1080");
         options.addArguments("start-maximized");
@@ -82,15 +82,16 @@ public class Test00Base {
         return tools.readJsonObject(PageBase.dataFilePath).getBoolean(data);
 
     }
-
-    public void takeScreenShot(){
+    public void takeScreenshot(){
         Allure.addAttachment("Screenshot", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
-
-
-    @AfterEach
-    public void evidenceKiller(){
-        driver.manage().deleteAllCookies();
-        driver.quit();
+    public void takeScreenShot(String text){
+        Allure.addAttachment(text, new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
+
+//    @AfterEach
+//    public void evidenceKiller(){
+//        driver.manage().deleteAllCookies();
+//        driver.quit();
+//    }
 }
