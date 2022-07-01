@@ -34,7 +34,6 @@ public class Test01Register extends TestBase {
         saveFailureScreenShot(driver);
     }
 
-
     @RepeatedTest(1)
     @Epic("Hangszerdiszkont.hu")
     @Feature("Registration")
@@ -42,8 +41,7 @@ public class Test01Register extends TestBase {
     @Description("Registration with correctly filled data")
     @DisplayName("TC02")
     @Severity(SeverityLevel.CRITICAL)
-    public void testingRegistrationCorrectData() throws IOException {
-
+    public void testRegCorrectData() throws IOException {
             //PAGEFACTORY
         RegisterPage registerPage = (RegisterPage) PageFactory.Create("RegisterPage", driver);
         Tools tools = (Tools) PageFactory.Create("Tools", driver);
@@ -52,7 +50,6 @@ public class Test01Register extends TestBase {
 
         //Navigate to the registration page
         driver.get(registerPage.registrationURL);
-
         //Collecting the web elements to be filled in an array, THE ORDER IS IMPORTANT!
         By[] elements = {
                 registerPage.firstNameField,
@@ -61,7 +58,6 @@ public class Test01Register extends TestBase {
                 registerPage.telephoneField,
                 registerPage.passwordField,
                 registerPage.passwordConfirmField};
-
         //Collecting the data to be filled into an array. The order is important, it must be consistent with the order of the previously created web elements!
         String[] dataSelector = {
                 "fName",
@@ -70,11 +66,9 @@ public class Test01Register extends TestBase {
                 "phone",
                 "passWord",
                 "passWord"};
-
         //Using a method we have written to fill in the data
         //USER 1 !
         tools.dataFiller(elements, dataSelector, "1");
-
         //Complete the registration process based on the criteria specified in the data.json file.
         tools.booleanFieldFiller(registerPage.subscribeYes, registerPage.subscribeNo, Subscribe);
         tools.booleanFieldFiller(registerPage.agreeCheckBox, null, conditionAgree);
@@ -82,13 +76,12 @@ public class Test01Register extends TestBase {
 
             //ASSERT
         WebElement loginCheckedText = driver.findElement(By.linkText("Logout"));
-
         Assertions.assertEquals(true, loginCheckedText.isDisplayed());
-
     }
 
     @RepeatedTest(1)
     @Epic("Hangszerdiszkont.hu")
+    @Feature("Registration")
     @Story("Registration tests")
     @Description("Registration with incorrect email data")
     @DisplayName("TC03")
