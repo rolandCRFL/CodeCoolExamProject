@@ -1,5 +1,4 @@
 import io.qameta.allure.*;
-import org.json.JSONObject;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
@@ -8,12 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Iterator;
-import java.util.Set;
 
-public class TestLogin extends TestBase{
+public class TestLogin extends Test00Base {
 
 
     @RepeatedTest(1)

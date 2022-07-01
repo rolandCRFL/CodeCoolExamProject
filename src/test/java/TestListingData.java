@@ -1,16 +1,9 @@
 import io.qameta.allure.*;
-import org.json.JSONArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
-public class TestListingData extends TestBase{
+public class TestListingData extends Test00Base {
 
 
     @RepeatedTest(1)

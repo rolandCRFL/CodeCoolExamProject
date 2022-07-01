@@ -7,7 +7,7 @@ import org.junit.jupiter.api.RepeatedTest;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class TestSavingData extends TestBase{
+public class TestSavingData extends Test00Base {
 
     @RepeatedTest(1)
     @Epic("Hangszerdiszkont.hu")

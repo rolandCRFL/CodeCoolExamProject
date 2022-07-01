@@ -1,7 +1,6 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-
-//import org.junit.jupiter.api.BeforeEach;
-import io.qameta.allure.Attachment;
+import io.qameta.allure.Allure;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -9,11 +8,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
-public class TestBase  {
+public class Test00Base {
 
      public WebDriver driver;
 
@@ -21,11 +21,10 @@ public class TestBase  {
      public ArrayList<String> microphoneCategoryList;
      public ArrayList<String> studioCategoryList;
 
-     public ArrayList<String> guitarStringList;
+     public ArrayList<String> guitarStringList = new ArrayList<>();
      public ArrayList<String> headPhoneList = new ArrayList<>();
 
     Boolean Subscribe;
-
     {
         try {
             Subscribe = jSonBooleanCollector("Subscribe");
@@ -35,7 +34,6 @@ public class TestBase  {
     }
 
     Boolean conditionAgree;
-
     {
         try {
             conditionAgree = jSonBooleanCollector("conditionAgree");
@@ -45,7 +43,6 @@ public class TestBase  {
     }
 
     Boolean continueClick;
-
     {
         try {
             continueClick = jSonBooleanCollector("continueClick");
@@ -53,15 +50,9 @@ public class TestBase  {
             throw new RuntimeException(e);
         }
     }
-
-
     String siteUrl = "https://www.hangszerdiszkont.hu/";
 
-    public TestBase()  {
-        this.guitarStringList = new ArrayList<>();
-    }
-
-
+    public Test00Base()  {}
     @BeforeEach
     public void setup(){
         WebDriverManager.chromedriver().setup();
@@ -79,8 +70,6 @@ public class TestBase  {
         driver.manage().window().maximize();
         driver.get("https://www.hangszerdiszkont.hu/");
 
-
-
     }
 
 
@@ -94,9 +83,15 @@ public class TestBase  {
 
     }
 
-    @Attachment
-    public byte[] saveFailureScreenShot(WebDriver driver){
-        return((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+    public void takeScreenShot(){
+        Allure.addAttachment("Screenshot", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+    }
+
+
+    @AfterEach
+    public void evidenceKiller(){
+        driver.manage().deleteAllCookies();
+        driver.quit();
     }
 
 

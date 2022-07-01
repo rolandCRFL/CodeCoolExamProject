@@ -150,8 +150,4 @@ public class Tools extends PageBase {
                 driver.get(newPageURL);}
         }
     }
-
-
-
-
 }

@@ -1,14 +1,11 @@
 import org.json.JSONArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class TestDataOperations extends TestBase{
+public class TestDataOperations extends Test00Base {
 
 // KIVEZETVE A TestListingData osztályba
 //    @Test

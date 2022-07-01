@@ -2,13 +2,8 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
-import java.io.IOException;
-
-public class TestPrivacyPolicy extends TestBase{
+public class TestPrivacyPolicy extends Test00Base {
 
 
     @RepeatedTest(1)

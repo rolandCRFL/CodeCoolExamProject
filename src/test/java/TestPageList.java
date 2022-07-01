@@ -1,14 +1,9 @@
 import io.qameta.allure.*;
-import org.json.JSONArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
-public class TestPageList extends TestBase{
+public class TestPageList extends Test00Base {
 
     @RepeatedTest(1)
     @Epic("Hangszerdiszkont.hu")
