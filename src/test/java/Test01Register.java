@@ -30,7 +30,7 @@ public class Test01Register extends TestBase {
             //ASSERT
 
         //Check that the logo is displayed on the page
-        Assertions.assertEquals(true, pageLogo.isDisplayed());
+        Assertions.assertEquals(false, pageLogo.isDisplayed());
 
         saveFailureScreenShot(driver);
 
