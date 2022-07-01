@@ -61,7 +61,7 @@ public class Test00Base {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-notifications");
         options.addArguments("--disable-extensions");
-        //options.addArguments("--headless");
+        options.addArguments("--headless");
         options.addArguments("−−incognito");
         options.addArguments("--window-size=1920,1080");
         options.addArguments("start-maximized");
@@ -89,9 +89,9 @@ public class Test00Base {
         Allure.addAttachment(text, new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
 
-//    @AfterEach
-//    public void evidenceKiller(){
-//        driver.manage().deleteAllCookies();
-//        driver.quit();
-//    }
+    @AfterEach
+    public void evidenceKiller(){
+        driver.manage().deleteAllCookies();
+        driver.quit();
+    }
 }
