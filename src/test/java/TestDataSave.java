@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class TestDataSave extends TestBase{
 
 
-    @RepeatedTest(5)
+    @RepeatedTest(1)
     @Epic("Hangszerdiszkont.hu")
     @Story("Data save")
     @Description("Saving guitar category list to a file")
@@ -42,7 +42,7 @@ public class TestDataSave extends TestBase{
         Assertions.assertEquals(guitarCategoryList,jsList);
     }
 
-    @RepeatedTest(5)
+    @RepeatedTest(1)
     @Epic("Hangszerdiszkont.hu")
     @Story("Data save")
     @Description("Accessing guitar string pages and the name of each string is stored in a JSON file ")
