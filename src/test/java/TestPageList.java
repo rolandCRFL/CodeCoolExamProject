@@ -1,5 +1,8 @@
+import io.qameta.allure.*;
 import org.json.JSONArray;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -7,22 +10,32 @@ import java.util.ArrayList;
 
 public class TestPageList extends TestBase{
 
-    @Test
-    public void SteppingOnMultiplePages() throws IOException {
-                //PAGEFACTORY
+    @RepeatedTest(1)
+    @Epic("Hangszerdiszkont.hu")
+    @Story("Scanning a multi-page list")
+    @Description("Accessing guitar string pages")
+    @DisplayName("TC16")
+    @Severity(SeverityLevel.CRITICAL)
+    public void SteppingOnMultiplePages() throws InterruptedException {
+            //PAGEFACTORY
 
         Tools tools = (Tools) PageFactory.Create("Tools",driver);
         LandingPage landingPage = (LandingPage) PageFactory.Create("LandingPage",driver);
         GoodsPage goodsPage = (GoodsPage) PageFactory.Create("GSPage",driver);
-
-                //TEST
+        
+            //TEST
 
         //Double-click on the web item to access the guitar categories
         tools.buttonClicker(landingPage.guitarCategoryButton,true);
         //Select a sub-category
         tools.buttonClicker(landingPage.guitarStringsButton,false);
+        //You will need to save the initial URL for the test
+        String startURL = driver.getCurrentUrl();
         //Create a local integer variable to store the number of available pages
-        int totalPagesNumber = tools.getTotalPagesNumberFromStringElement(goodsPage.pageSizeStringLoc);
+        int totalPagesNumber = tools.getTotalPagesNumberFromStringElement(goodsPage.pageSizeLoc);
+
+        tools.paginizer(totalPagesNumber,goodsPage.goodsStringName,guitarStringList);
+        /*
         //Create a local String variable that will be the URL base of your loop.
         String pageURL = tools.getGoodsURL();
         //Create a for loop that will allow you to add the page number to the URL you just stored, one by one, and extract the data you want to an ArrayList.
@@ -32,16 +45,50 @@ public class TestPageList extends TestBase{
                 String newPageURL = pageURL.concat(String.valueOf(i));
                 driver.get(newPageURL);}
         }
-        //Finally, save your data to a file.
-        tools.saveToJson(guitarStringList,PageBase.guitarStringsFilePath);
 
-                //ASSERT
+        */
 
-        // Read file contents
-        JSONArray jsonArray = tools.readJsonArray(PageBase.guitarStringsFilePath);
-        // Convert JSONArray to String Array
-        ArrayList<String> jsList = tools.jSonArrayToStringArray(jsonArray);
-        // Compare
-        Assertions.assertEquals(guitarStringList,jsList);
+            //ASSERT
+
+        //Create the expected endpoint URL
+        String expectURL = startURL + "?page=" + totalPagesNumber;
+
+        Assertions.assertEquals(expectURL,driver.getCurrentUrl());
+
+    }
+
+    @RepeatedTest(1)
+    @Epic("Hangszerdiszkont.hu")
+    @Story("Scanning a multi-page list")
+    @Description("Accessing headphone pages")
+    @DisplayName("TC17")
+    @Severity(SeverityLevel.NORMAL)
+    public void SteppingOnMultiplePages2() throws InterruptedException {
+            //PAGEFACTORY
+
+        Tools tools = (Tools) PageFactory.Create("Tools",driver);
+        LandingPage landingPage = (LandingPage) PageFactory.Create("LandingPage",driver);
+        GoodsPage goodsPage = (GoodsPage) PageFactory.Create("GSPage",driver);
+
+            //TEST
+
+        //Double-click on the web item to access the guitar categories
+        tools.buttonClicker(landingPage.studioCategoryButton,true);
+        //Select a sub-category
+        tools.buttonClicker(landingPage.headphoneButton,false);
+        //You will need to save the initial URL for the test
+        String startURL = driver.getCurrentUrl();
+        //Create a local integer variable to store the number of available pages
+        int totalPagesNumber = tools.getTotalPagesNumberFromStringElement(goodsPage.pageSizeLoc);
+
+        tools.paginizer(totalPagesNumber,goodsPage.goodsStringName,headPhoneList);
+
+            //ASSERT
+
+        //Create the expected endpoint URL
+        String expectURL = startURL + "?page=" + totalPagesNumber;
+
+        Assertions.assertEquals(expectURL,driver.getCurrentUrl());
+
     }
 }

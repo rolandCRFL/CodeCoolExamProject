@@ -10,9 +10,16 @@ public class LandingPage extends PageBase {
     final By cookiesBar = By.xpath("//*[@id=\"cookie-bar\"]");
     final String cookiesPageURL = "https://www.hangszerdiszkont.hu/adatvedelmi-tajekoztato";
     final By guitarCategoryButton = By.linkText("Guitar");
-    final By guitarCategoryTexts = By.xpath("//*[@id=\"content\"]//*[@class=\"links-text\"]");
+    final By categoryTexts = By.xpath("//*[@id=\"content\"]//*[@class=\"links-text\"]");
     final By guitarStringsButton = By.xpath("//*[@id=\"content\"]/div[1]/div/div[16]/a");
-    ////*[@class="top-menu secondary-menu"]//*[@class="menu-item top-menu-item top-menu-item-2"]
+    final By searchBarInput = By.xpath("//*[@name=\"search\"]");
+    final By searchButton = By.className("search-button");
+    final By searchResultText = By.xpath("/html/body/div[4]/h1/span");
+
+    final By micCategoryButton = By.linkText("Michrophone");
+    final By studioCategoryButton = By.linkText("Studio");
+    final By headphoneButton = By.linkText("Headphone");
+
 
     public LandingPage(WebDriver drv) {
         super(drv);

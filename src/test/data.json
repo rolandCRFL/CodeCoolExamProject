@@ -1,11 +1,50 @@
 {
-    "fName": "Béla",
-    "email": "nandan@gmail.com",
-    "phone": "06320442411",
-    "lName": "Baala",
-    "passWord": "belavagyok",
+    "_comment1": "Account 1 - full correct data",
+
+    "fName1": "Béla",
+    "lName1": "Lábas",
+    "email1": "labasbela2@gmail.com",
+    "phone1": "06300442412",
+    "passWord1": "belavagyokalabas",
+
+    "_comment2": "Account 2 - bad email template",
+
+    "fName2": "Béla",
+    "lName2": "Fazekas",
+    "email2": "nemalabasbelakukacgmail.com",
+    "phone2": "063004432356",
+    "passWord2": "belavagyokdenemalabas",
+
+    "_comment3": "Account 3 - missing phone data",
+
+    "fName3": "József",
+    "lName3": "Poharas",
+    "email3": "poharasijozsef@gmail.com",
+    "phone3": "",
+    "passWord3": "belavagyokalabas",
+
+    "_comment4": "Account 4 - too easy password",
+
+    "fName4": "Máté",
+    "lName4": "Tányéros",
+    "email4": "nekedteritunk3@gmail.com",
+    "phone4": "06300999110",
+    "passWord4": "pass",
+
+    "_comment5": "Account 5 - incorrect char types in lName and phone",
+
+    "fName5": "Jakab",
+    "lName5": "P0lk0rrekt",
+    "email5": "elfogyottminden2@gmail.com",
+    "phone5": "063000szent",
+    "passWord5": "egyekv4gyunk",
+
     "Subscribe": true,
     "conditionAgree": true,
-    "continueClick": false
+    "continueClick": true,
+
+    "SWGeneral": "zongora",
+    "SWIrrelevant": "malteresvödör",
+    "SWSpecific": "LTD M1000 PRNB"
 
     }

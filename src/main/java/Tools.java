@@ -1,6 +1,7 @@
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -67,7 +68,6 @@ public class Tools extends PageBase {
 
 
     public JSONObject readJsonObject(String filePath) throws IOException {
-
         String jsonDataAsString;
         jsonDataAsString = new String(Files.readAllBytes(Paths.get(filePath)));
         JSONObject jsonData = new JSONObject(jsonDataAsString);
@@ -116,9 +116,39 @@ public class Tools extends PageBase {
         String endOfUrl = "?page=";
         String result = URL.concat(endOfUrl);
         return result;
-
-
     }
 
+    public String jSonStringCollector(String data) throws IOException {
+        return readJsonObject(PageBase.dataFilePath).getString(data);
+    }
+
+    public Boolean jSonBooleanCollector(String data) throws IOException {
+        return readJsonObject(PageBase.dataFilePath).getBoolean(data);
+    }
+
+    public void modifyData(By element, String data) throws IOException {
+        driver.findElement(element).sendKeys(Keys.LEFT_CONTROL,"A");
+        driver.findElement(element).sendKeys(readJsonObject(PageBase.dataFilePath).getString(data));
+    }
+
+    public void dataFiller(By[] elements, String[] data, String accountSelector ) throws IOException {
+
+        for (int i = 0; i < elements.length; i++) {
+            driver.findElement(elements[i]).sendKeys(Keys.LEFT_CONTROL,"A");
+            driver.findElement(elements[i]).sendKeys(readJsonObject(PageBase.dataFilePath).getString(data[i]+accountSelector));
+
+        }
+    }
+    //Create a for loop that will allow you to add the page number to the URL you just stored, one by one, and extract the data you want to an ArrayList.
+    public void paginizer(int totalPagesNumber,By goodsStringName, ArrayList<String> StringList) throws InterruptedException {
+        String pageURL = getGoodsURL();
+        for (int i =2; i<totalPagesNumber+2; i++){
+            Thread.sleep(500);
+            getTextToArrayList(goodsStringName,StringList);
+            if (i<totalPagesNumber+1){
+                String newPageURL = pageURL.concat(String.valueOf(i));
+                driver.get(newPageURL);}
+        }
+    }
 
 }

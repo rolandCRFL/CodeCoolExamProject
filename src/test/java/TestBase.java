@@ -15,59 +15,11 @@ public class TestBase  {
      public WebDriver driver;
 
      public ArrayList<String> guitarCategoryList;
+     public ArrayList<String> microphoneCategoryList;
+     public ArrayList<String> studioCategoryList;
 
      public ArrayList<String> guitarStringList;
-
-     public
-    String firstName;
-
-    {
-        try {
-            firstName = jSonStringCollector("fName");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    String lastName;
-
-    {
-        try {
-            lastName = jSonStringCollector("lName");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    String email;
-
-    {
-        try {
-            email = jSonStringCollector("email");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    String phone;
-
-    {
-        try {
-            phone = jSonStringCollector("phone");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    String passWord;
-
-    {
-        try {
-            passWord = jSonStringCollector("passWord");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
+     public ArrayList<String> headPhoneList = new ArrayList<>();
 
     Boolean Subscribe;
 
@@ -100,7 +52,7 @@ public class TestBase  {
     }
 
 
-    String url = "https://www.hangszerdiszkont.hu/";
+    String siteUrl = "https://www.hangszerdiszkont.hu/";
 
     public TestBase()  {
         this.guitarStringList = new ArrayList<>();
