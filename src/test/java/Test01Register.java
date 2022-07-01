@@ -10,7 +10,6 @@ import java.io.IOException;
 
 public class Test01Register extends TestBase {
 
-
     @RepeatedTest(1)
     @Epic("Hangszerdiszkont.hu")
     @Feature("Registration")
@@ -28,7 +27,7 @@ public class Test01Register extends TestBase {
         WebElement pageLogo = driver.findElement(By.xpath("//*[@id=\"logo\"]"));
 
             //ASSERT
-
+        saveFailureScreenShot(driver);
         //Check that the logo is displayed on the page
         Assertions.assertEquals(false, pageLogo.isDisplayed());
         ///????
