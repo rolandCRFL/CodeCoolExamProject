@@ -52,7 +52,7 @@ public class Test00Base {
     }
     String siteUrl = "https://www.hangszerdiszkont.hu/";
 
-    public Test00Base()  {}
+//    public Test00Base()  {}
     @BeforeEach
     public void setup(){
         WebDriverManager.chromedriver().setup();
@@ -72,11 +72,14 @@ public class Test00Base {
 
     }
 
-
-    public String jSonStringCollector(String data) throws IOException {
-        Tools tools = (Tools) PageFactory.Create("Tools",driver);
-        return tools.readJsonObject(PageBase.dataFilePath).getString(data);
+    @AfterEach
+    public void evidenceKiller(){
+        driver.manage().deleteAllCookies();
+        driver.quit();
     }
+
+        //METHODS
+
     public Boolean jSonBooleanCollector(String data) throws IOException {
         Tools tools = (Tools) PageFactory.Create("Tools",driver);
         return tools.readJsonObject(PageBase.dataFilePath).getBoolean(data);
@@ -89,9 +92,8 @@ public class Test00Base {
         Allure.addAttachment(text, new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
 
-    @AfterEach
-    public void evidenceKiller(){
-        driver.manage().deleteAllCookies();
-        driver.quit();
-    }
+
+
+
+
 }
