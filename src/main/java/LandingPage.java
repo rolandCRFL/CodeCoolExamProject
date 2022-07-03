@@ -15,12 +15,11 @@ public class LandingPage extends PageBase {
     final By searchBarInput = By.xpath("//*[@name=\"search\"]");
     final By searchButton = By.className("search-button");
     final By searchResultText = By.xpath("/html/body/div[4]/h1/span");
-
     final By micCategoryButton = By.linkText("Michrophone");
     final By studioCategoryButton = By.linkText("Studio");
     final By headphoneButton = By.linkText("Headphone");
 
-
+    //Constructor
     public LandingPage(WebDriver drv) {
         super(drv);
     }

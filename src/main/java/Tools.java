@@ -33,10 +33,6 @@ public class Tools extends PageBase {
         } else button.click();
     }
 
-    //Send String data to web element
-    public void stringFieldFiller(By element, String fillerData){
-        driver.findElement(element).sendKeys(fillerData);}
-
     //Send a boolean to select the appropriate element
     public void booleanFieldFiller(By elementYes, By elementNo, Boolean fillerData){
         if(fillerData) driver.findElement(elementYes).click();
@@ -123,14 +119,6 @@ public class Tools extends PageBase {
         return readJsonObject(PageBase.dataFilePath).getString(data);
     }
 
-    public Boolean jSonBooleanCollector(String data) throws IOException {
-        return readJsonObject(PageBase.dataFilePath).getBoolean(data);
-    }
-
-    public void modifyData(By element, String data) throws IOException {
-        driver.findElement(element).sendKeys(Keys.LEFT_CONTROL,"A");
-        driver.findElement(element).sendKeys(readJsonObject(PageBase.dataFilePath).getString(data));
-    }
 
     public void dataFiller(By[] elements, String[] data, String accountSelector ) throws IOException {
 
@@ -154,6 +142,4 @@ public class Tools extends PageBase {
     public String randomMail(){
         return RandomStringUtils.randomAlphabetic(7) + "@gmail.com";
     }
-
-
 }

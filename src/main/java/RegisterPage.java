@@ -17,54 +17,10 @@ public class RegisterPage extends PageBase {
     final By subscribeNo = By.cssSelector("body > div > form > fieldset:nth-child(3) > div > div > label:nth-child(2) > input[type=radio]");
     final By continueButton = By.xpath("/html/body/div/form/div[2]/div/button");
 
-
-
-
-
     //Constructor
     public RegisterPage(WebDriver drv) {
         super(drv);
     }
-
-    public void clickOnReg(By button){
-        WebElement click = driver.findElement(button);
-        click.click();
-    }
-        // Ez az első próbálkozásom volt, de hamar beláttam hogy nem túl szép :D
-    public void fieldFiller(String switchPosition, String fillerData, Boolean sWitcher){
-        switch (switchPosition){
-            case "FirstName":
-                driver.findElement(firstNameField).sendKeys(fillerData);
-                break;
-            case "LastName":
-                driver.findElement(lastNameField).sendKeys(fillerData);
-                break;
-            case "Email":
-                driver.findElement(emailField).sendKeys(fillerData);
-                break;
-            case "Phone":
-                driver.findElement(telephoneField).sendKeys(fillerData);
-                break;
-            case "Password":
-                driver.findElement(passwordField).sendKeys(fillerData);
-                driver.findElement(passwordConfirmField).sendKeys(fillerData);
-                break;
-            case "Subscribe":
-                if (sWitcher) driver.findElement(subscribeYes).click();
-                else driver.findElement(subscribeNo).click();
-                break;
-            case "Agree":
-                if(sWitcher) driver.findElement(agreeCheckBox).click();
-                break;
-            case "ContinueClick":
-                if(sWitcher) driver.findElement(continueButton).click();
-                break;
-        }
-    }
-
-
-
-
 
 
 }

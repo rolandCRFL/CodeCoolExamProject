@@ -91,9 +91,4 @@ public class Test00Base {
     public void takeScreenShot(String text){
         Allure.addAttachment(text, new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
-
-
-
-
-
 }

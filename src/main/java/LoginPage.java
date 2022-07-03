@@ -15,9 +15,7 @@ public class LoginPage extends PageBase {
     final By continueButton = By.xpath("//*[@class=\"pull-right\"]//*[@type=\"submit\"]");
 
 
-
-
-    //constructor
+    //Constructor
     public LoginPage(WebDriver drv) {
         super(drv);
     }
