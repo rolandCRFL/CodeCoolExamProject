@@ -1,14 +1,13 @@
-<body style="background-color:#121212;">
 
 <h1 align="center">CodeCool Exam Project</h1>
 <div align="center">
 
 [![Contributors][contributors-shield]][contributors-url]
-<img alt="Passed Test" src="https://img.shields.io/badge/Passed%20test-31-darkgreen?style=for-the-badge">
-<img alt="Failed Test" src="https://img.shields.io/badge/Failed%20test-3-red?style=for-the-badge">
-<img alt="Bug" src="https://img.shields.io/badge/Bug-4-orange?style=for-the-badge">
-<img alt="Test Suite Version" src="https://img.shields.io/badge/Test suit version-1.4-darkblue?style=for-the-badge">
-<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/R0land90/CodeCoolFinalExamProject?style=for-the-badge">
+<img alt="Passed Test" src="https://img.shields.io/badge/Passed%20test-31-darkgreen">
+<img alt="Failed Test" src="https://img.shields.io/badge/Failed%20test-3-red">
+<img alt="Bug" src="https://img.shields.io/badge/Bug-4-orange">
+<img alt="Test Suite Version" src="https://img.shields.io/badge/Test suit version-1.4-darkblue">
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/R0land90/CodeCoolFinalExamProject">
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 </div>
@@ -97,7 +96,7 @@ The predefined criteria were as follows: <br />  `Registration`, `Login`, `Priva
 <!-- GETTING STARTED -->
 ## Getting Started
 
-<h4>&emsp;To be able to run the tests ourselves, we need some preparation and conditions.</h3>  
+<h4>&emsp;To be able to run the tests ourselves, we need some preparation and conditions.</h4>  
 ### Prerequisites
 <ul>
    <li>Let's start with the IDE, which in our case is highly recommended IntelliJ IDEA 2022.1.1.</li>
@@ -133,7 +132,7 @@ My tests have detailed commentary and clear structuring to help you find your wa
 _For more screenshots and statistics, please refer to the [Allure Report](https://r0land90.github.io/CodeCoolFinalExamProject/20/)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
+</div>
 <HR>
 
 ## Conclusion
@@ -183,15 +182,14 @@ Project Link: [https://github.com/R0land90/CodeCoolFinalExamProject](https://git
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links --></div>
-[contributors-shield]: https://img.shields.io/badge/Test_Status-91.17-darkgreen?style=for-the-badge
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/badge/Test_Status-91.17-darkgreen
 [contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
 [forks-url]: https://github.com/github_username/repo_name/network/members
 [issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
 [issues-url]: https://github.com/github_username/repo_name/issues
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/roland-crisan-9729b554/
 [product-screenshot]: images/screenshot.png
 
-</body>
