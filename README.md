@@ -183,7 +183,7 @@ Project Link: [https://github.com/R0land90/CodeCoolFinalExamProject](https://git
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links --></div>
 [contributors-shield]: https://img.shields.io/badge/Test_Status-91.17-darkgreen?style=for-the-badge
 [contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
@@ -193,3 +193,5 @@ Project Link: [https://github.com/R0land90/CodeCoolFinalExamProject](https://git
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/roland-crisan-9729b554/
 [product-screenshot]: images/screenshot.png
+
+</body>
