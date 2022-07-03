@@ -97,11 +97,12 @@ The predefined criteria were as follows: <br />  `Registration`, `Login`, `Priva
 ## Getting Started
 
 <h4>&emsp;To be able to run the tests ourselves, we need some preparation and conditions.</h4>  
+
 ### Prerequisites
+
 <ul>
    <li>Let's start with the IDE, which in our case is highly recommended IntelliJ IDEA 2022.1.1.</li>
-
-<li>For Java, you will need Java SE version 16. Install that too.</li>
+   <li>For Java, you will need Java SE version 16. Install that too.</li>
 </ul>
 
 ### Installation
