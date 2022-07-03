@@ -1,22 +1,4 @@
-<div id="top"></div>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
 
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 [![Contributors][contributors-shield]][contributors-url]
 <img alt="Passed Test" src="https://img.shields.io/badge/Passed%20test-31-green">
 <img alt="Failed Test" src="https://img.shields.io/badge/Failed%20test-3-red">
@@ -24,7 +6,7 @@
 <img alt="Test Suite Version" src="https://img.shields.io/badge/Test suit version-1.4-darkblue">
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/R0land90/CodeCoolFinalExamProject">
 [![LinkedIn][linkedin-shield]][linkedin-url]
-<h2 align="center">CodeCool Exam Project</h2>
+<h1 align="center">CodeCool Exam Project</h1>
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -73,7 +55,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -83,7 +65,7 @@
 <HR>
 
 <!-- ABOUT THE PROJECT -->
-## - About The Project
+## About The Project
 
 &emsp;My Codecool studies eventually led to this project. The task was to automation test a site of my choice based on certain predefined criteria. My choice was an online webshop that deals with products that are close to my personal interests, musical instruments.
 The predefined criteria were as follows: <br />  `Registration`, `Login`, `Privacy Policy`, `Listing of Data`, `Multi-page List`, `New data input`, `Modify existing data`, `Delete data`, `Save data`, `Logout`
@@ -108,7 +90,7 @@ The predefined criteria were as follows: <br />  `Registration`, `Login`, `Priva
 <HR>
 
 <!-- GETTING STARTED -->
-## - Getting Started
+## Getting Started
 
 <h4>&emsp;To be able to run the tests ourselves, we need some preparation and conditions.</h3>  
 ### Prerequisites
@@ -133,7 +115,7 @@ The predefined criteria were as follows: <br />  `Registration`, `Login`, `Priva
 <HR>
 
 <!-- USAGE EXAMPLES -->
-## - Usage
+## Usage
 &emsp;Tests are organised into test classes with a clear name. Tests can be run from these classes.
 My tests have detailed commentary and clear structuring to help you find your way around.<br />
 <p>&emsp;The test is started by building and running the test method</p>
@@ -149,7 +131,7 @@ _For more screenshots and statistics, please refer to the [Allure Report](https:
 
 <HR>
 
-## - Conclusion
+## Conclusion
 The automated tests were successfully completed and all criteria were met:<br />
 
 - [x] Requirements fulfilled
@@ -174,7 +156,7 @@ If you have any comments or bugs, please use the github issue
 <HR>
 
 <!-- CONTACT -->
-## - Contact
+## Contact
 
 Crisan Roland - [LinkedIn](https://www.linkedin.com/in/roland-crisan-9729b554/) - roland.crfl@gmail.com
 
@@ -185,7 +167,7 @@ Project Link: [https://github.com/R0land90/CodeCoolFinalExamProject](https://git
 <HR>
 
 <!-- ACKNOWLEDGMENTS -->
-## - Acknowledgments
+## Acknowledgments
 
 * My Codecool mentors, especially Tamás who patiently taught us all the time
 * To my group mates, for all their learning together and their helpfulness
