@@ -18,19 +18,20 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 [![Contributors][contributors-shield]][contributors-url]
-<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/R0land90/CodeCoolFinalExamProject?style=for-the-badge">
 <img alt="Passed Test" src="https://img.shields.io/badge/Passed%20test-31-green?style=for-the-badge">
 <img alt="Failed Test" src="https://img.shields.io/badge/Failed%20test-3-red?style=for-the-badge">
 <img alt="Bugs" src="https://img.shields.io/badge/Bugs-4-orange?style=for-the-badge">
+<img alt="Test Suite Version" src="https://img.shields.io/badge/Test suit version-2.12-darkblue?style=for-the-badge">
+
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/R0land90/CodeCoolFinalExamProject?style=for-the-badge">
+
 [![LinkedIn][linkedin-shield]][linkedin-url]
-
-
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="640" height="480">
+    <img src="images/logo.png" alt="Logo" class="responsive">
   </a>
 
 <h3 align="center">CodeCool Exam Project</h3>
@@ -54,7 +55,7 @@
   </p>
 </div>
 
-
+<HR>
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -81,24 +82,19 @@
 </details>
 
 
+<HR>
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## - About The Project
 
-<div align="center">
-  <a href="https://hangszerdiszkont.hu">
-    <img src="images/screenshot.png" alt="Logo" width="640" height="480">
-  </a>
+&emsp;My Codecool studies eventually led to this project. The task was to automation test a site of my choice based on certain predefined criteria. My choice was an online webshop that deals with products that are close to my personal interests, musical instruments.
+The predefined criteria were as follows: <br />  `Registration`, `Login`, `Privacy Policy`, `Listing of Data`, `Multi-page List`, `New data input`, `Modify existing data`, `Delete data`, `Save data`, `Logout`
 
-My Codecool studies eventually led to this project. The task was to automation test a site of my choice based on certain predefined criteria. My choice was an online webshop that deals with products that are close to my personal interests, musical instruments.
-The predefined criteria were as follows: <br /> <br />  `Registration`, `Login`, `Privacy Policy`, `Listing of Data`, `Multi-page List`, `New data input`, `Modify existing data`, `Delete data`, `Save data`, `Logout`
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 ### Built With
- <br />
+
 
 * [IntelliJ IDEA](https://www.jetbrains.com/)
 * [Selenium WebDriver](https://www.selenium.dev/)
@@ -111,26 +107,23 @@ The predefined criteria were as follows: <br /> <br />  `Registration`, `Login`,
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
+<HR>
 
 <!-- GETTING STARTED -->
-## Getting Started
+## - Getting Started
 
-To be able to run the tests ourselves, we need some preparation and conditions.
-
+<h4>&emsp;To be able to run the tests ourselves, we need some preparation and conditions.</h3>  
 ### Prerequisites
+<ul>
+   <li>Let's start with the IDE, which in our case is highly recommended IntelliJ IDEA 2022.1.1.</li>
 
-Let's start with the IDE, which in our case is highly recommended IntelliJ IDEA 2022.1.1
-<br />
-For Java, you will need Java SE version 16. Install that too.
+<li>For Java, you will need Java SE version 16. Install that too.</li>
+</ul>
 
 ### Installation
 
 1. First step is to clone the repo
- 
-   ```sh
-   git clone git@github.com:R0land90/CodeCoolFinalExamProject.git
-   ```
+   ```sh git clone git@github.com:R0land90/CodeCoolFinalExamProject.git```
 2. Start the IntelliJ IDE
 3. Open the cloned repository on IntelliJ as a project.
 4. In the project settings, check that Java version 16 is set, the dependencies of my tests are set to this version. Errors may occur on other versions.
@@ -139,17 +132,15 @@ For Java, you will need Java SE version 16. Install that too.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
+<HR>
 
 <!-- USAGE EXAMPLES -->
-## Usage
-Tests are organised into test classes with a clear name. Tests can be run from these classes.
+## - Usage
+&emsp;Tests are organised into test classes with a clear name. Tests can be run from these classes.
+My tests have detailed commentary and clear structuring to help you find your way around.<br />
+<p>&emsp;The test is started by building and running the test method</p>
 
-My tests have detailed commentary and clear structuring to help you find your way around.
-
-The test is started by building and running the test method
-
-<div align="center">
+<div align="left">
   <a href="https://hangszerdiszkont.hu">
     <img src="images/screenshotCode1.png" alt="Logo" width="800" height="1024">
   </a>
@@ -158,37 +149,34 @@ _For more screenshots and statistics, please refer to the [Allure Report](https:
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<HR>
 
-
-## Conclusion
-The automated tests were successfully completed and all criteria were met:<br /><br />
+## - Conclusion
+The automated tests were successfully completed and all criteria were met:<br />
 
 - [x] Requirements fulfilled
 - [x] Test Manager file filled in [Open File](https://docs.google.com/spreadsheets/d/1UBBZAuH0J5V6GjJOi3nL8mq-TLWs1g8t2Musju8R_m4/edit?usp=sharing)
 - [x] Allure Report completed [Open Report](https://r0land90.github.io/CodeCoolFinalExamProject/20/)
-- [x] Every `git push` results in a new, updated Allure Report <br /><br />
+- [x] Every `git push` results in a new, updated Allure Report <br />
 
 
 Manual steps for automated tests documented in the Test Manager.xlsx file
 
 For repetitive and more general tasks, I created a set of tools in a class called `tools`. [Open tools](https://github.com/R0land90/CodeCoolFinalExamProject/blob/main/src/main/java/Tools.java)
 
-The `Repeated and serial data entry from data sources` criterion was implemented in several tasks. These can be found in the tasks `Register`, `Login`, `Modify Existing Data` and `Save Data`. The external files are in JSON format and I used JSON tools to write and read them.
+The `Repeated and serial data entry from data sources` criterion was implemented in several tasks. These can be found in the tasks `Register`, `Login`, `Modify Existing Data` and `Save Data`. <br>
+
+The external files are in JSON format and I used JSON tools to write and read them.
 
 If you have any comments or bugs, please use the github issue
 [Open issues](https://github.com/R0land90/CodeCoolFinalExamProject/issues)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
-
-
-
-
+<HR>
 
 <!-- CONTACT -->
-## Contact
+## - Contact
 
 Crisan Roland - [LinkedIn](https://www.linkedin.com/in/roland-crisan-9729b554/) - roland.crfl@gmail.com
 
@@ -196,10 +184,10 @@ Project Link: [https://github.com/R0land90/CodeCoolFinalExamProject](https://git
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
+<HR>
 
 <!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+## - Acknowledgments
 
 * My Codecool mentors, especially Tamás who patiently taught us all the time
 * To my group mates, for all their learning together and their helpfulness
