@@ -42,7 +42,7 @@
     <a href="https://github.com/R0land90/CodeCoolFinalExamProject#readme"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/R0land90/CodeCoolFinalExamProject#readme"><strong>View Test Manager file »</strong></a>
+    <a href="https://docs.google.com/spreadsheets/d/1UBBZAuH0J5V6GjJOi3nL8mq-TLWs1g8t2Musju8R_m4/edit?usp=sharing"><strong>View Test Manager file »</strong></a>
     <br />
     <br />
     <a href="https://r0land90.github.io/CodeCoolFinalExamProject/20/"><strong>View Allure Report</strong></a>
@@ -90,7 +90,7 @@
     <img src="images/screenshot.png" alt="Logo" width="640" height="480">
   </a>
 
-My Codecool studies eventually led to this project. My exam was to automation test a site of my choice based on certain predefined criteria. My choice was an online webshop that deals with products that are close to my personal interests, musical instruments.
+My Codecool studies eventually led to this project. The task was to automation test a site of my choice based on certain predefined criteria. My choice was an online webshop that deals with products that are close to my personal interests, musical instruments.
 The predefined criteria were as follows: <br /> <br />  `Registration`, `Login`, `Privacy Policy`, `Listing of Data`, `Multi-page List`, `New data input`, `Modify existing data`, `Delete data`, `Save data`, `Logout`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
